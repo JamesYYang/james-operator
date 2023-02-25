@@ -1,0 +1,26 @@
+apiVersion: crd.newegg.org/v1
+kind: DemoApp
+metadata:
+  name: demoapp-sample
+  namespace: bts-common
+  labels:
+    app: empty-sample
+spec:
+  deployment:
+    replicas: 1
+    selector:
+      matchLabels:
+        app: empty-sample
+    template:
+      spec:
+        containers:
+          - name: empty-sample
+            image: dev-harbor.newegg.org/bts/empty-server:1.0.3
+            ports:
+              - containerPort: 80
+  service:
+    type: ClusterIP
+    ports:
+      - targetPort: 8000
+        name: http
+        port: 80

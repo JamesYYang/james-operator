@@ -1,0 +1,24 @@
+# permissions for end users to edit demoapps.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: demoapp-editor-role
+rules:
+- apiGroups:
+  - crd.newegg.org
+  resources:
+  - demoapps
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - crd.newegg.org
+  resources:
+  - demoapps/status
+  verbs:
+  - get
