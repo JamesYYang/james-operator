@@ -2,6 +2,10 @@
 
 sample for write a k8s operator
 
+## Reference
+
+Kubebuilder Book: https://book.kubebuilder.io/
+
 
 ## License
 
